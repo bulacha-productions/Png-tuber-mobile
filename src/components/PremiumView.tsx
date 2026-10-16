@@ -290,11 +290,11 @@ export const PremiumView: React.FC<PremiumViewProps> = ({
               <span>Baixar APK</span>
             </a>
             <a
-              href="https://github.com/bulacha-productions/Png-tuber-mobile/releases"
+              href="https://github.com/bulacha-productions/Png-tuber-mobile/releases/tag/v1.0.0"
               target="_blank"
               rel="noreferrer"
               className="p-2.5 rounded-xl bg-[#0B1020] hover:bg-[#1E2640] border border-[#1E2640] text-[#A9AEC5] hover:text-[#F5F5FF] transition-colors"
-              title="Ver Releases no GitHub"
+              title="Ver Release Oficial v1.0.0 no GitHub"
             >
               <ExternalLink className="w-4 h-4" />
             </a>
