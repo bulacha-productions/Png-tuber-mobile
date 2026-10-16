@@ -1,0 +1,9 @@
+{
+  "name": "PNGTuber Recorder",
+  "description": "Gravador de tela para streamers de jogos com sobreposição flutuante de avatar PNGTuber 2D animado por voz em tempo real.",
+  "requestFramePermissions": [
+    "microphone",
+    "display-capture"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

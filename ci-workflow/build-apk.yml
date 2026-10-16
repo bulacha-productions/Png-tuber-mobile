@@ -1,0 +1,61 @@
+name: Compilar APK Android
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Gerar APK Assinado
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do Repositório
+      uses: actions/checkout@v4
+
+    - name: Configurar JDK 17
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Aceitar Licenças do Android SDK
+      run: |
+        yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses 2>/dev/null || yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses 2>/dev/null || true
+
+    - name: Gerar Chave de Assinatura (Keystore)
+      run: |
+        TARGET_DIR="."
+        if [ -d "android" ]; then
+          TARGET_DIR="android"
+        fi
+        cd $TARGET_DIR
+        keytool -genkeypair -v \
+          -keystore release.jks \
+          -alias pngtuber \
+          -keyalg RSA \
+          -keysize 2048 \
+          -validity 10000 \
+          -storepass android \
+          -keypass android \
+          -dname "CN=PNGTuberRecorder, OU=MobileApp, O=App, L=SaoPaulo, ST=SP, C=BR"
+
+    - name: Compilar APKs Assinados
+      run: |
+        TARGET_DIR="."
+        if [ -d "android" ]; then
+          TARGET_DIR="android"
+        fi
+        cd $TARGET_DIR
+        chmod +x gradlew
+        ./gradlew assembleDebug --stacktrace --no-daemon
+
+    - name: Publicar APK para Download
+      uses: actions/upload-artifact@v4
+      with:
+        name: PNGTuber-Recorder-APK
+        path: |
+          android/app/build/outputs/apk/*/*.apk
+          app/build/outputs/apk/*/*.apk
+        retention-days: 14

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient matching user's custom icon -->
+    <linearGradient id="appBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="35%" stop-color="#4F46E5" />
+      <stop offset="75%" stop-color="#311075" />
+      <stop offset="100%" stop-color="#1E1B4B" />
+    </linearGradient>
+
+    <!-- Subtle glow overlay -->
+    <radialGradient id="topGlow" cx="50%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Squircle Base -->
+  <rect width="512" height="512" rx="112" fill="url(#appBg)" />
+  <rect width="512" height="512" rx="112" fill="url(#topGlow)" />
+
+  <!-- Top Right Microphone with Sound Waves -->
+  <g id="microphone" transform="translate(345, 65)">
+    <!-- Sound Waves Left -->
+    <line x1="-38" y1="20" x2="-38" y2="34" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" opacity="0.9" />
+    <line x1="-24" y1="12" x2="-24" y2="42" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" />
+    <line x1="-12" y1="18" x2="-12" y2="36" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" opacity="0.9" />
+
+    <!-- Microphone Capsule -->
+    <rect x="0" y="0" width="28" height="46" rx="14" fill="#FFFFFF" />
+    <!-- Stand Arc -->
+    <path d="M -8,22 C -8,46 36,46 36,22" stroke="#FFFFFF" stroke-width="5" fill="none" stroke-linecap="round" />
+    <!-- Stand Stem -->
+    <line x1="14" y1="44" x2="14" y2="58" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" />
+    <!-- Stand Base -->
+    <line x1="2" y1="58" x2="26" y2="58" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" />
+
+    <!-- Sound Waves Right -->
+    <line x1="40" y1="18" x2="40" y2="36" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" opacity="0.9" />
+    <line x1="52" y1="12" x2="52" y2="42" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" />
+    <line x1="66" y1="20" x2="66" y2="34" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" opacity="0.9" />
+  </g>
+
+  <!-- Central Character Silhouette (White Anime Head) -->
+  <g id="character" transform="translate(256, 235)">
+    <!-- Ponytail on left side -->
+    <path d="M -90,-40 C -145,-50 -160,25 -130,55 C -115,70 -95,65 -90,40 C -85,15 -75,-20 -90,-40 Z" fill="#FFFFFF" />
+
+    <!-- Head Outline / Hair Back -->
+    <path d="M -75,-105 C -35,-135 45,-135 85,-105 C 130,-70 145,-15 130,55 C 118,105 50,125 0,125 C -50,125 -118,105 -130,55 C -142,5 -120,-70 -75,-105 Z" fill="#FFFFFF" />
+
+    <!-- Left Hair Tuft / Bangs -->
+    <path d="M -125,5 C -120,40 -105,75 -90,95 C -82,65 -78,35 -78,5 Z" fill="#FFFFFF" />
+    
+    <!-- Right Hair Tuft -->
+    <path d="M 125,5 C 120,40 105,75 90,95 C 82,65 78,35 78,5 Z" fill="#FFFFFF" />
+
+    <!-- Sparkle ✦ in Hair (Top Left) -->
+    <path d="M -60,-80 Q -60,-65 -75,-65 Q -60,-65 -60,-50 Q -60,-65 -45,-65 Q -60,-65 -60,-80 Z" fill="#4F46E5" />
+    <path d="M -80,-52 Q -80,-43 -89,-43 Q -80,-43 -80,-34 Q -80,-43 -71,-43 Q -80,-43 -80,-52 Z" fill="#4F46E5" />
+
+    <!-- Bangs cutouts into the face -->
+    <!-- Center forehead bangs shape -->
+    <path d="M -70,-30 C -60,10 -45,35 -30,45 C -25,20 -15,-10 -5,-35 C 5,5 15,35 30,40 C 40,20 48,-5 55,-30 C 65,-5 72,15 80,30 C 85,5 88,-15 88,-30 C 75,-75 20,-95 -15,-95 C -55,-95 -75,-65 -70,-30 Z" fill="#FFFFFF" />
+
+    <!-- Cute Eyes (Soft dark indigo pill shapes) -->
+    <ellipse cx="-20" cy="18" rx="10" ry="16" fill="#1E1B4B" />
+    <ellipse cx="44" cy="18" rx="10" ry="16" fill="#1E1B4B" />
+
+    <!-- Cute Smile Mouth -->
+    <path d="M 6,40 C 6,56 22,56 22,40" stroke="#1E1B4B" stroke-width="6" stroke-linecap="round" fill="none" />
+
+    <!-- Soft Cheeks / Blush (Lavender) -->
+    <ellipse cx="-40" cy="36" rx="14" ry="8" fill="#C4B5FD" />
+    <ellipse cx="64" cy="36" rx="14" ry="8" fill="#C4B5FD" />
+
+    <!-- Side strands framing face -->
+    <path d="M -50,-10 C -42,30 -35,65 -25,95 C -38,75 -52,40 -55,-10 Z" fill="#FFFFFF" />
+    <path d="M 50,-10 C 42,30 35,65 25,95 C 38,75 52,40 55,-10 Z" fill="#FFFFFF" />
+  </g>
+
+  <!-- Bottom Brand Text: PNGTUBER -->
+  <text x="256" y="415" 
+        font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+        font-size="54" 
+        font-weight="900" 
+        fill="#FFFFFF" 
+        text-anchor="middle" 
+        letter-spacing="3">PNGTUBER</text>
+
+  <!-- Bottom Brand Sub-text: MÓBILE -->
+  <text x="256" y="460" 
+        font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" 
+        font-size="34" 
+        font-weight="700" 
+        fill="#C7D2FE" 
+        text-anchor="middle" 
+        letter-spacing="4">MÓBILE</text>
+</svg>
